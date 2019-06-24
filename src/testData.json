@@ -1,0 +1,31 @@
+[{
+        "title": "Black Oxide Socket Cap Screws Super Long Name",
+        "count": 100,
+        "cost": "$3/case",
+        "icon": "socketCapScrews.webp"
+    },
+    {
+        "title": "1mx.5m 2k Twill Carbon Fiber Roll",
+        "count": 15,
+        "cost": "$30/m",
+        "icon": "carbon.jpg"
+    },
+    {
+        "title": "Brass Shim Stock (.040\")",
+        "count": 4,
+        "cost": "$2.99/ea",
+        "icon": "shimstock.jpeg"
+    },
+    {
+        "title": "WS2812B RGB Strip 1m",
+        "count": 7,
+        "cost": "$8.99/m",
+        "icon": "ws2812.jpeg"
+    },
+    {
+        "title": "1/4\"x1\" Hardened Dowel Pin",
+        "count": 50,
+        "cost": "$5.00/50ct",
+        "icon": "dowelpins.jpeg"
+    }
+]
