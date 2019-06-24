@@ -6,15 +6,15 @@ This project is mainly an exercise, but I'm also building it out of necessity be
 
 ## Features
 ### Phase 1 (Core)
-[ ] Basic UI to Create, view, modify, and delete Items.
-[ ] Two Item Types, Tool and Inventory
-[ ] Filtered Item Search
+- [ ] Basic UI to Create, view, modify, and delete Items.
+- [ ] Two Item Types, Tool and Inventory
+- [ ] Filtered Item Search
 
 ### Phase 2 (Data & Reporting)
-[ ] Logging and reporting
-[ ] Historic change Data
+- [ ] Logging and reporting
+- [ ] Historic change Data
 
 ## Phase 3 (Enterprise Features)
-[ ] Complex Item ID support (UUID, Barcode, QR, etc.) with tag creation.
-[ ] Inventory Locations/Bins
-[ ] Bin auditing
+- [ ] Complex Item ID support (UUID, Barcode, QR, etc.) with tag creation.
+- [ ] Inventory Locations/Bins
+- [ ] Bin auditing
