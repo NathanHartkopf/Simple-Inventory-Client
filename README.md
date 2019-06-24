@@ -6,7 +6,7 @@ This project is mainly an exercise, but I'm also building it out of necessity be
 
 ## Features
 ### Phase 1 (Core)
-- [ ] Basic UI to Create, view, modify, and delete Items. (In Progress)
+- [ ] Basic UI to Create, view, modify, and delete Items. **In Progress**
 - [ ] Two basic item types (Tool, Inventory)
 - [ ] Filtered Item Search
 
