@@ -22,7 +22,7 @@ function App() {
               <a className="navbar-brand mb-0 h1">Items</a>
           </nav>
           <div className="cards">
-            <CardList cards={data}></CardList>
+            <CardList cards={data.cards}></CardList>
           </div>
     </div>
     </>

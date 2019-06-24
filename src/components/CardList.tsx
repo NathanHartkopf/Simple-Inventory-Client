@@ -7,7 +7,7 @@ export function CardList(props: { cards: CardData[] }) {
     console.log(cards)
     return (
         <>
-            {cards.map(c => <ItemCard cost={c.cost} title={c.title} count={c.count} icon={c.icon} ></ItemCard>)}
+            {cards.map((card, i) => <ItemCard cardData={card} key={i} ></ItemCard>)}
         </>
     )
 }
