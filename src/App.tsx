@@ -1,7 +1,11 @@
 import React from 'react';
 import './App.css';
-import data from './testData.json'
 import { CardList } from './components/CardList';
+import { CreateItem } from './components/CreateItem';
+import { ServerConnect } from './Utility';
+import { ITEM, Unit } from './types/types';
+
+
 function Styles() {
     return (
         <link
@@ -13,18 +17,29 @@ function Styles() {
     )
 }
 
+new ServerConnect()
+
+const data: ITEM[] = [{
+        ID: 1,
+        type: 0,
+        title : "test",
+        "description": "",
+        count: 100,
+        "dimensions": { unit: Unit.millimeter},
+        "cost": { cost: 100},
+        icon: 'carbon.jpg'
+}]
+ 
+
 function App() {
   return (
-      <>
-      <Styles />
-    <div className="App">
-          <nav className="navbar navbar-light bg-light">
-              <a className="navbar-brand mb-0 h1">Items</a>
-          </nav>
-          <div className="cards">
-            <CardList cards={data.cards}></CardList>
-          </div>
-    </div>
+    <>
+        <Styles></Styles>
+        <div className="App">
+            <CreateItem></CreateItem>
+            <hr></hr>
+            <CardList cards={data}></CardList>
+        </div>
     </>
   );
 }
