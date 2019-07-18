@@ -1,15 +1,21 @@
-export class ServerConnect {
-    websocket: WebSocket | undefined = undefined
-    constructor () {
-        this.connect()
+import { ITEM } from './types/types';
+
+export default class ItemUtil {
+    static createItem(item: ITEM) {
     }
-    connect () {
-        return new Promise (res => {
-            this.websocket = new WebSocket('ws://localhost:1337')
-            let { websocket: s } = this
     
-            s.onopen = () => console.log("Connected to Server")
-            s.onerror = e => {throw(e)}
+    static  getItem(id: number) {
+        const headers = new Headers()
+        headers.append("itemid", `${id}`)
+        
+        return fetch("http://172.30.1.192/item/get", {
+            headers: headers
         })
+    }
+    
+    static updateItem(id: number, item: ITEM) {
+    }
+
+    static deleteItem(id: number) {
     }
 }

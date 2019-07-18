@@ -2,8 +2,8 @@ import React from 'react';
 import './App.css';
 import { CardList } from './components/CardList';
 import { CreateItem } from './components/CreateItem';
-import { ServerConnect } from './Utility';
-import { ITEM, Unit } from './types/types';
+import ItemUtil from './Utility';
+import { ITEM } from './types/types';
 
 
 function Styles() {
@@ -17,31 +17,40 @@ function Styles() {
     )
 }
 
-new ServerConnect()
+export default class App extends React.Component<{}, { data: ITEM[]}> {
+    constructor(props:any) {
+        super(props)
+        this.state = {
+            data: [undefined]
+        }
+        this.getAllItems()
+        setInterval(() => {
+            this.getAllItems()
+        }, 1000)
+    }
 
-const data: ITEM[] = [{
-        ID: 1,
-        type: 0,
-        title : "test",
-        "description": "",
-        count: 100,
-        "dimensions": { unit: Unit.millimeter},
-        "cost": { cost: 100},
-        icon: 'carbon.jpg'
-}]
- 
-
-function App() {
-  return (
-    <>
-        <Styles></Styles>
-        <div className="App">
-            <CreateItem></CreateItem>
-            <hr></hr>
-            <CardList cards={data}></CardList>
-        </div>
-    </>
-  );
+    private getAllItems() {
+        ItemUtil.getItem(0).then(request => request.json())
+            .then(items => {
+                this.setState({
+                    data: items
+                })
+                console.log(items)
+            })
+    }
+    private createItem(item: ITEM) {
+        console.log("create", item)
+    }
+    render () {
+        return (
+        <>
+            <Styles></Styles>
+            <CreateItem createItemHandler={this.createItem}></CreateItem>
+            <CardList cards={this.state.data}></CardList>
+        </>
+        )
+    }
 }
 
-export default App;
+
+//<CardList cards={this.state.data}></CardList>

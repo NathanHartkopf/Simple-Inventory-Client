@@ -13,7 +13,7 @@ export enum Unit {
     mile
 }
 
-enum COMMANDTYPE {
+export enum COMMANDTYPE {
     createItem,
     getItem,
     updateItem,
@@ -25,23 +25,23 @@ export enum ITEM_TYPE {
     tool
 }
 
-interface COMMAND {
+export interface COMMAND {
     type: COMMANDTYPE
 }
 
-interface CREATE_ITEM extends COMMAND {
+export interface CREATE_ITEM extends COMMAND {
     type: COMMANDTYPE.createItem
-    create: ITEM
+    item: ITEM
 }
 
-interface GET_ITEM extends COMMAND {
+export interface GET_ITEM extends COMMAND {
     type: COMMANDTYPE.getItem
     id: number
 }
 
-interface UPDATE_ITEM extends COMMAND {
+export interface UPDATE_ITEM extends COMMAND {
     type: COMMANDTYPE.updateItem
-    update: ITEM
+    item: ITEM
 }
 
 type Cost = {
@@ -57,4 +57,4 @@ export type ITEM = {
     dimensions: Dimensions
     cost: Cost
     icon: string
-}
+} | undefined

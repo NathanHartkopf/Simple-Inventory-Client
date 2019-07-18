@@ -1,12 +1,15 @@
 import React from 'react'
 import { ITEM_TYPE, ITEM } from '../types/types';
-import {Badge, Image, Container, Row, Col} from 'react-bootstrap'
+import { Badge, Image, Container, Row, Col} from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTools, faBoxOpen } from '@fortawesome/free-solid-svg-icons';
+import { PlaceholderCard } from './placeholderCard';
 
 //An Item card to display item information and icon.
 export function ItemCard(props: {cardData: ITEM}) {
+    if (props.cardData === undefined) return <PlaceholderCard></PlaceholderCard>
     let { title, cost, icon, count, type } = props.cardData
+    console.log(icon)
 
     let typeString = "success"
     let typeIcon
@@ -33,7 +36,7 @@ export function ItemCard(props: {cardData: ITEM}) {
             <Col xs={8} md={10} lg={11}>
                 <span className="itemCardTitle">{title}</span>
                 <div className="badges">
-                    <Badge variant="primary">{cost.cost}</Badge>&nbsp;
+                    <Badge variant="primary">${cost}/ea</Badge>&nbsp;
                     <Badge variant="info">In Stock: {count}</Badge>
                 </div>
             </Col>
